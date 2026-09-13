@@ -68,6 +68,7 @@ export interface Category {
   image: string;
   productCount: number;
   icon: string;
+  subcategories?: string[];
 }
 
 export interface Review {
