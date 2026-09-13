@@ -1,0 +1,122 @@
+[
+  {
+    "id": "cat-electronics",
+    "name": "Electronics & Gadgets",
+    "slug": "electronics",
+    "description": "Smart devices, headphones, audio & wearable tech",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
+    "productCount": 1420,
+    "icon": "Headphones",
+    "subcategories": ["Audio & Headphones", "Wearable Tech", "Smart Home", "Accessories"]
+  },
+  {
+    "id": "cat-smartphones",
+    "name": "Smartphones & Mobile",
+    "slug": "smartphones",
+    "description": "Latest smartphones, cases, chargers & power banks",
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&auto=format&fit=crop&q=80",
+    "productCount": 980,
+    "icon": "Smartphone",
+    "subcategories": ["Smartphones", "Cases & Covers", "Power Banks", "Wireless Chargers"]
+  },
+  {
+    "id": "cat-computers",
+    "name": "Computers & Laptops",
+    "slug": "computers",
+    "description": "Laptops, monitors, keyboards, mice & accessories",
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=80",
+    "productCount": 650,
+    "icon": "Laptop",
+    "subcategories": ["Laptops", "Keyboards & Mice", "Monitors", "Storage & USB"]
+  },
+  {
+    "id": "cat-women-fashion",
+    "name": "Women's Fashion",
+    "slug": "women-fashion",
+    "description": "Trendy dresses, tops, ethnic wear & designer outfits",
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80",
+    "productCount": 2450,
+    "icon": "ShoppingBag",
+    "subcategories": ["Dresses & Tops", "Ethnic Wear", "Jackets & Outerwear", "Activewear"]
+  },
+  {
+    "id": "cat-men-fashion",
+    "name": "Men's Fashion",
+    "slug": "men-fashion",
+    "description": "Casual shirts, suits, denim & street fashion",
+    "image": "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=600&auto=format&fit=crop&q=80",
+    "productCount": 1820,
+    "icon": "User",
+    "subcategories": ["Shirts & T-Shirts", "Jeans & Trousers", "Jackets", "Formal Suits"]
+  },
+  {
+    "id": "cat-watches",
+    "name": "Watches & Luxury",
+    "slug": "watches",
+    "description": "Elegant Rose Gold, Stainless Steel & Smart watches",
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format&fit=crop&q=80",
+    "productCount": 540,
+    "icon": "Watch",
+    "subcategories": ["Luxury Watches", "Smartwatches", "Leather Strap Watches", "Chronographs"]
+  },
+  {
+    "id": "cat-bags",
+    "name": "Bags & Luggage",
+    "slug": "bags",
+    "description": "Leather totes, backpacks, clutches & travel luggage",
+    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80",
+    "productCount": 890,
+    "icon": "ShoppingBag",
+    "subcategories": ["Handbags & Totes", "Backpacks", "Clutches & Wallets", "Travel Bags"]
+  },
+  {
+    "id": "cat-beauty",
+    "name": "Beauty & Skincare",
+    "slug": "beauty",
+    "description": "Lip products, makeup kits, serum & skincare",
+    "image": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80",
+    "productCount": 1280,
+    "icon": "Sparkles",
+    "subcategories": ["Lip Products", "Makeup Kits", "Serums & Oils", "Fragrances"]
+  },
+  {
+    "id": "cat-home-living",
+    "name": "Home & Kitchen",
+    "slug": "home-living",
+    "description": "Modern decor, kitchen appliances & organization",
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop&q=80",
+    "productCount": 730,
+    "icon": "Home",
+    "subcategories": ["Home Decor", "Kitchen Utensils", "Lighting & Lamps", "Bedding & Towels"]
+  },
+  {
+    "id": "cat-shoes",
+    "name": "Shoes & Footwear",
+    "slug": "shoes",
+    "description": "Sneakers, heels, loafers & casual footwear",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80",
+    "productCount": 1150,
+    "icon": "Footprints",
+    "subcategories": ["Sneakers", "Heels & Pumps", "Loafers & Oxfords", "Sandals"]
+  },
+  {
+    "id": "cat-gaming",
+    "name": "Gaming & Tech",
+    "slug": "gaming",
+    "description": "Gaming headsets, mechanical keyboards & controllers",
+    "image": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&auto=format&fit=crop&q=80",
+    "productCount": 420,
+    "icon": "Gamepad2",
+    "subcategories": ["Gaming Headsets", "Controllers", "Mechanical Keyboards", "Gaming Mice"]
+  },
+  {
+    "id": "cat-jewelry",
+    "name": "Jewelry & Accessories",
+    "slug": "jewelry",
+    "description": "Fine neckpieces, earrings, rings & statement jewelry",
+    "image": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&auto=format&fit=crop&q=80",
+    "productCount": 610,
+    "icon": "Gem",
+    "subcategories": ["Necklaces & Pendants", "Earrings", "Rings", "Bracelets & Bangles"]
+  }
+]

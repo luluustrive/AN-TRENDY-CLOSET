@@ -1,0 +1,42 @@
+[
+  {
+    "id": "rev-1",
+    "customerName": "Nusrat Jahan",
+    "customerImage": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    "rating": 5,
+    "comment": "The Rose Gold Elegance Watch exceeded my expectations! The packaging was so luxurious and delivery was within 24 hours in Dhaka.",
+    "date": "2026-08-01",
+    "productName": "Rose Gold Elegance Watch",
+    "verified": true
+  },
+  {
+    "id": "rev-2",
+    "customerName": "Sabrina Islam",
+    "customerImage": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
+    "rating": 5,
+    "comment": "In love with the Luxe Leather Tote Bag! Fits my 15-inch laptop easily along with all my work essentials. High quality leather.",
+    "date": "2026-08-03",
+    "productName": "Luxe Leather Tote Bag",
+    "verified": true
+  },
+  {
+    "id": "rev-3",
+    "customerName": "Farhana Ahmed",
+    "customerImage": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80",
+    "rating": 5,
+    "comment": "The Velvet Matte Lipstick Set has such smooth texture and vibrant shades. Doesn't dry out my lips at all. Will order again!",
+    "date": "2026-08-05",
+    "productName": "Velvet Matte Lipstick Set",
+    "verified": true
+  },
+  {
+    "id": "rev-4",
+    "customerName": "Tanjina Akter",
+    "customerImage": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=150&auto=format&fit=crop&q=80",
+    "rating": 4.5,
+    "comment": "Super fast shipping and great customer support via WhatsApp. The Pearl Drop Earrings look so elegant with my saree.",
+    "date": "2026-08-06",
+    "productName": "Pearl Drop Earrings",
+    "verified": true
+  }
+]

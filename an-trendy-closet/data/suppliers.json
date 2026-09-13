@@ -1,0 +1,54 @@
+[
+  {
+    "id": "sup-101",
+    "name": "NovaTech Electronics Direct",
+    "contactPerson": "Kabir Hossain",
+    "phone": "+880 1711-223344",
+    "email": "kabir@novatechbd.com",
+    "address": "IDB Bhaban, Agargaon, Dhaka",
+    "rating": 4.9,
+    "commissionRate": 5,
+    "isVerified": true,
+    "status": "Active",
+    "activeProductsCount": 12
+  },
+  {
+    "id": "sup-102",
+    "name": "Royal Rose Fine Jewelry BD",
+    "contactPerson": "Nusrat Parveen",
+    "phone": "+880 1819-887766",
+    "email": "nusrat@royalrosebd.com",
+    "address": "Baitul Mukarram, Dhaka",
+    "rating": 4.8,
+    "commissionRate": 8,
+    "isVerified": true,
+    "status": "Active",
+    "activeProductsCount": 8
+  },
+  {
+    "id": "sup-103",
+    "name": "Luxe Leather Crafts",
+    "contactPerson": "Mahmudul Hasan",
+    "phone": "+880 1912-334455",
+    "email": "mahmud@luxeleather.bd",
+    "address": "Hazaribagh, Dhaka",
+    "rating": 4.7,
+    "commissionRate": 6,
+    "isVerified": true,
+    "status": "Active",
+    "activeProductsCount": 15
+  },
+  {
+    "id": "sup-104",
+    "name": "Velvet Beauty Cosmetics Importers",
+    "contactPerson": "Sabrina Sultana",
+    "phone": "+880 1733-445566",
+    "email": "sabrina@velvetcosmetics.com",
+    "address": "Banani 11, Dhaka",
+    "rating": 4.9,
+    "commissionRate": 7,
+    "isVerified": true,
+    "status": "Active",
+    "activeProductsCount": 20
+  }
+]

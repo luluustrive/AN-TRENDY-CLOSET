@@ -1,0 +1,290 @@
+[
+  {
+    "id": "prod-1",
+    "name": "Rose Gold Elegance Watch",
+    "slug": "rose-gold-elegance-watch",
+    "description": "A stunning rose gold timepiece that combines classic elegance with modern sophistication. Features a genuine leather strap, sapphire crystal glass, and Japanese quartz movement. Water resistant up to 30 meters. Perfect for both casual and formal occasions.",
+    "shortDescription": "Premium rose gold watch with leather strap",
+    "price": 4500,
+    "originalPrice": 6500,
+    "discount": 31,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Watches",
+    "categorySlug": "watches",
+    "brand": "AN Collection",
+    "rating": 4.8,
+    "reviewCount": 124,
+    "inStock": true,
+    "stockCount": 15,
+    "colors": [
+      { "name": "Rose Gold", "hex": "#C89C7A" },
+      { "name": "Silver", "hex": "#C0C0C0" },
+      { "name": "Gold", "hex": "#D4AF37" }
+    ],
+    "sizes": ["Small", "Medium", "Large"],
+    "tags": ["luxury", "elegant", "bestseller"],
+    "isFeatured": true,
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "sku": "ANC-W-001",
+    "specifications": {
+      "Movement": "Japanese Quartz",
+      "Case Material": "Stainless Steel",
+      "Band Material": "Genuine Leather",
+      "Water Resistance": "30 meters",
+      "Crystal": "Sapphire",
+      "Case Diameter": "36mm"
+    },
+    "seller": {
+      "name": "Crown Timepiece Direct",
+      "rating": 4.9,
+      "productsCount": 120,
+      "verified": true,
+      "responseRate": "99%"
+    },
+    "soldCount": 420
+  },
+  {
+    "id": "prod-2",
+    "name": "Luxe Leather Tote Bag",
+    "slug": "luxe-leather-tote-bag",
+    "description": "Crafted from premium full-grain leather, this spacious tote bag is the perfect companion for the modern woman. Features multiple compartments, a padded laptop sleeve, magnetic closure, and gold-tone hardware.",
+    "shortDescription": "Premium leather tote with laptop sleeve",
+    "price": 5800,
+    "originalPrice": 7200,
+    "discount": 19,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Bags & Luggage",
+    "categorySlug": "bags",
+    "brand": "AN Collection",
+    "rating": 4.9,
+    "reviewCount": 89,
+    "inStock": true,
+    "stockCount": 8,
+    "colors": [
+      { "name": "Tan", "hex": "#C89C7A" },
+      { "name": "Black", "hex": "#2F2F2F" },
+      { "name": "Burgundy", "hex": "#800020" }
+    ],
+    "sizes": ["One Size"],
+    "tags": ["luxury", "leather", "work"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "sku": "ANC-B-001",
+    "specifications": {
+      "Material": "Full-Grain Leather",
+      "Dimensions": "40cm x 30cm x 14cm",
+      "Closure": "Magnetic Snap",
+      "Hardware": "Gold-tone"
+    },
+    "seller": {
+      "name": "Luxe Crafts Hub",
+      "rating": 4.8,
+      "productsCount": 85,
+      "verified": true,
+      "responseRate": "97%"
+    },
+    "soldCount": 310
+  },
+  {
+    "id": "prod-3",
+    "name": "Velvet Matte Lipstick Set",
+    "slug": "velvet-matte-lipstick-set",
+    "description": "A curated collection of 6 richly pigmented matte lipsticks in universally flattering shades. Long-wearing formula that stays put for up to 12 hours. Enriched with vitamin E and jojoba oil for comfortable all-day wear.",
+    "shortDescription": "6-piece matte lipstick collection",
+    "price": 1800,
+    "originalPrice": 2800,
+    "discount": 36,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Beauty & Skincare",
+    "categorySlug": "beauty",
+    "brand": "AN Beauty",
+    "rating": 4.7,
+    "reviewCount": 256,
+    "inStock": true,
+    "stockCount": 42,
+    "colors": [
+      { "name": "Rose", "hex": "#EECFCB" },
+      { "name": "Berry", "hex": "#8E4585" },
+      { "name": "Nude", "hex": "#D2B48C" }
+    ],
+    "sizes": [],
+    "tags": ["beauty", "bestseller", "gift"],
+    "isFeatured": true,
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isFlashSale": true,
+    "flashSaleEnds": "2026-09-30T23:59:59",
+    "sku": "ANC-C-001",
+    "specifications": {
+      "Type": "Matte Lipstick",
+      "Finish": "Velvet Matte",
+      "Duration": "Up to 12 hours",
+      "Pieces": "6"
+    },
+    "seller": {
+      "name": "GLAM BeautyBD",
+      "rating": 4.9,
+      "productsCount": 350,
+      "verified": true,
+      "responseRate": "99%"
+    },
+    "soldCount": 1250
+  },
+  {
+    "id": "prod-4",
+    "name": "Pearl Drop Earrings",
+    "slug": "pearl-drop-earrings",
+    "description": "Timeless freshwater pearl drop earrings set in 925 sterling silver with 18k gold plating. Each pearl is hand-selected for its lustrous quality.",
+    "shortDescription": "Freshwater pearl earrings in gold-plated silver",
+    "price": 2200,
+    "originalPrice": 3000,
+    "discount": 27,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Jewelry & Accessories",
+    "categorySlug": "jewelry",
+    "brand": "AN Collection",
+    "rating": 4.9,
+    "reviewCount": 67,
+    "inStock": true,
+    "stockCount": 20,
+    "colors": [
+      { "name": "Gold", "hex": "#D4AF37" },
+      { "name": "Silver", "hex": "#C0C0C0" }
+    ],
+    "sizes": [],
+    "tags": ["elegant", "pearl", "gift"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isFlashSale": false,
+    "sku": "ANC-J-001",
+    "specifications": {
+      "Material": "925 Sterling Silver",
+      "Plating": "18k Yellow Gold",
+      "Stone": "Freshwater Cultured Pearl"
+    },
+    "seller": {
+      "name": "Aura Fine Jewels",
+      "rating": 5.0,
+      "productsCount": 90,
+      "verified": true,
+      "responseRate": "100%"
+    },
+    "soldCount": 280
+  },
+  {
+    "id": "prod-5",
+    "name": "Wireless Noise Cancelling Headphones",
+    "slug": "wireless-noise-cancelling-headphones",
+    "description": "High-fidelity Bluetooth 5.3 headphones with active noise cancellation (ANC), 40-hour battery life, ergonomic memory foam cushions, and ultra-crisp bass drivers.",
+    "shortDescription": "40-hour battery ANC Bluetooth headphones",
+    "price": 6500,
+    "originalPrice": 8500,
+    "discount": 23,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Electronics & Gadgets",
+    "categorySlug": "electronics",
+    "brand": "NovaSound",
+    "rating": 4.8,
+    "reviewCount": 312,
+    "inStock": true,
+    "stockCount": 25,
+    "colors": [
+      { "name": "Matte Black", "hex": "#1C1C1C" },
+      { "name": "Silver", "hex": "#E0E0E0" }
+    ],
+    "sizes": ["Adjustable"],
+    "tags": ["audio", "tech", "gadget"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isFlashSale": true,
+    "flashSaleEnds": "2026-09-30T23:59:59",
+    "sku": "ANC-E-001",
+    "specifications": {
+      "Bluetooth": "v5.3",
+      "Battery Life": "40 Hours",
+      "ANC": "Active Noise Cancellation",
+      "Charging": "Type-C Fast Charge"
+    },
+    "seller": {
+      "name": "NovaTech Official",
+      "rating": 4.9,
+      "productsCount": 420,
+      "verified": true,
+      "responseRate": "99%"
+    },
+    "soldCount": 890
+  },
+  {
+    "id": "prod-6",
+    "name": "Ultra-Slim OLED Smart Phone 256GB",
+    "slug": "ultra-slim-oled-smart-phone",
+    "description": "5G Smartphone featuring a 6.7-inch 120Hz OLED display, 108MP AI triple camera, 5000mAh battery, and 67W turbo fast charging.",
+    "shortDescription": "6.7\" 120Hz OLED, 108MP Triple Camera 5G Smartphone",
+    "price": 38500,
+    "originalPrice": 45000,
+    "discount": 14,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Smartphones & Mobile",
+    "categorySlug": "smartphones",
+    "brand": "AuraMobile",
+    "rating": 4.9,
+    "reviewCount": 184,
+    "inStock": true,
+    "stockCount": 12,
+    "colors": [
+      { "name": "Midnight Blue", "hex": "#191970" },
+      { "name": "Emerald Green", "hex": "#004953" }
+    ],
+    "sizes": ["256GB"],
+    "tags": ["smartphone", "5g", "flagship"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "sku": "ANC-S-001",
+    "specifications": {
+      "Display": "6.7 inch OLED 120Hz",
+      "Processor": "Octa-core 5G",
+      "Camera": "108MP + 12MP + 5MP",
+      "Battery": "5000mAh 67W"
+    },
+    "seller": {
+      "name": "MobileHub Bangladesh",
+      "rating": 4.9,
+      "productsCount": 210,
+      "verified": true,
+      "responseRate": "100%"
+    },
+    "soldCount": 540
+  }
+]
