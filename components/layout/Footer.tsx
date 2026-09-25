@@ -84,7 +84,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
-            {settings.shopTagline}. Bangladesh's premier destination for fashion, luxury watches, handbags, skincare, electronics, and lifestyle essentials.
+            {settings.shopTagline}. Bangladesh&apos;s premier destination for fashion, luxury watches, handbags, skincare, electronics, and lifestyle essentials.
           </p>
           <div className="flex items-center space-x-3 text-xs text-stone-400 pt-1">
             <span className="flex items-center space-x-1">
@@ -105,7 +105,7 @@ export default function Footer() {
           <ul className="space-y-2 text-xs text-stone-400">
             <li><Link href="/products?category=electronics" className="hover:text-amber-400 transition-colors">Electronics & Gadgets</Link></li>
             <li><Link href="/products?category=smartphones" className="hover:text-amber-400 transition-colors">Smartphones</Link></li>
-            <li><Link href="/products?category=women-fashion" className="hover:text-amber-400 transition-colors">Women's Fashion</Link></li>
+            <li><Link href="/products?category=women-fashion" className="hover:text-amber-400 transition-colors">Women&apos;s Fashion</Link></li>
             <li><Link href="/products?category=watches" className="hover:text-amber-400 transition-colors">Watches & Luxury</Link></li>
             <li><Link href="/products?category=beauty" className="hover:text-amber-400 transition-colors">Beauty & Skincare</Link></li>
           </ul>
@@ -116,7 +116,7 @@ export default function Footer() {
           <h4 className="text-xs uppercase tracking-wider font-extrabold text-white mb-3">Customer Care</h4>
           <ul className="space-y-2 text-xs text-stone-400">
             <li><Link href="/faq" className="hover:text-amber-400 transition-colors">Help Center & FAQ</Link></li>
-            <li><Link href="/cart" className="hover:text-amber-400 transition-colors">Track Order</Link></li>
+            <li><Link href="/track-order" className="hover:text-amber-400 transition-colors">Track Order</Link></li>
             <li><Link href="/contact" className="hover:text-amber-400 transition-colors">Contact Support</Link></li>
             <li><Link href="/about" className="hover:text-amber-400 transition-colors">About AN Marketplace</Link></li>
             <li><Link href="/faq" className="hover:text-amber-400 transition-colors">Return Policy</Link></li>

@@ -133,7 +133,7 @@ export default function Hero() {
               <div className="flex justify-between items-start mb-3">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400 flex items-center space-x-1">
                   <Zap className="w-3.5 h-3.5 fill-amber-400" />
-                  <span>Marketplace Today's Highlight</span>
+                  <span>Marketplace Today&apos;s Highlight</span>
                 </span>
                 <span className="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
                   HOT DEAL

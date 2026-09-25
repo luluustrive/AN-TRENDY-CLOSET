@@ -10,6 +10,7 @@ import { CategoriesProvider } from "@/lib/categories-context";
 import ToastContainer from "@/components/ui/ToastContainer";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AIChatButton from "@/components/ai/AIChatButton";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -60,6 +61,7 @@ export default function RootLayout({
                     <main className="flex-grow">{children}</main>
                     <Footer />
                     <ToastContainer />
+                    <AIChatButton />
                   </CartProvider>
                 </WishlistProvider>
               </ToastProvider>

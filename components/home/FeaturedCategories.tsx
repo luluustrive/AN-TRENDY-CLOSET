@@ -1,9 +1,14 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Grid } from "lucide-react";
-import categoriesData from "@/data/categories.json";
+import { useCategories } from "@/lib/categories-context";
+import { productsData } from "@/lib/products-helper";
 
 export default function FeaturedCategories() {
+  const { categories } = useCategories();
+
   return (
     <section className="py-12 bg-[#FAF7F2] border-b border-[#E9DED4]">
       <div className="container mx-auto px-4 md:px-6">
@@ -27,36 +32,39 @@ export default function FeaturedCategories() {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-          {categoriesData.map((category) => (
-            <Link
-              key={category.id}
-              href={`/products?category=${category.slug}`}
-              className="group relative bg-white rounded-2xl p-4 border border-[#E9DED4] hover:border-[#C89C7A] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center flex flex-col items-center justify-between overflow-hidden"
-            >
-              {/* Category Thumbnail Image */}
-              <div className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-stone-100 relative">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-                <span className="absolute bottom-2 left-2 text-[10px] font-bold text-white bg-black/50 px-2 py-0.5 rounded-md backdrop-blur-md">
-                  {category.productCount}+ items
-                </span>
-              </div>
+          {categories.map((category) => {
+            const count = productsData.filter((p) => p.categorySlug === category.slug).length;
+            return (
+              <Link
+                key={category.id}
+                href={`/products?category=${category.slug}`}
+                className="group relative bg-white rounded-2xl p-4 border border-[#E9DED4] hover:border-[#C89C7A] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-center flex flex-col items-center justify-between overflow-hidden"
+              >
+                {/* Category Thumbnail Image */}
+                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-stone-100 relative">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                  <span className="absolute bottom-2 left-2 text-[10px] font-bold text-white bg-black/50 px-2 py-0.5 rounded-md backdrop-blur-md">
+                    {count > 0 ? `${count} items` : `Explore`}
+                  </span>
+                </div>
 
-              <div className="w-full text-left">
-                <h3 className="font-sans text-sm font-bold text-[#2F2F2F] group-hover:text-[#C89C7A] transition-colors line-clamp-1">
-                  {category.name}
-                </h3>
-                <p className="text-[11px] text-[#666666] line-clamp-1 mt-0.5">
-                  {category.description}
-                </p>
-              </div>
-            </Link>
-          ))}
+                <div className="w-full text-left">
+                  <h3 className="font-sans text-sm font-bold text-[#2F2F2F] group-hover:text-[#C89C7A] transition-colors line-clamp-1">
+                    {category.name}
+                  </h3>
+                  <p className="text-[11px] text-[#666666] line-clamp-1 mt-0.5">
+                    {category.description}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

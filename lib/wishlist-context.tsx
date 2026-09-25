@@ -7,32 +7,25 @@ import { useToast } from "./toast-context";
 const WishlistContext = createContext<WishlistState | undefined>(undefined);
 
 export function WishlistProvider({ children }: { children: React.ReactNode }) {
-  const [wishlist, setWishlist] = useState<Product[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [wishlist, setWishlist] = useState<Product[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const savedWishlist = localStorage.getItem("an_trendy_wishlist");
+      return savedWishlist ? JSON.parse(savedWishlist) : [];
+    } catch (e) {
+      console.error("Failed to load wishlist from localStorage", e);
+      return [];
+    }
+  });
   const { showToast } = useToast();
 
   useEffect(() => {
     try {
-      const savedWishlist = localStorage.getItem("an_trendy_wishlist");
-      if (savedWishlist) {
-        setWishlist(JSON.parse(savedWishlist));
-      }
+      localStorage.setItem("an_trendy_wishlist", JSON.stringify(wishlist));
     } catch (e) {
-      console.error("Failed to load wishlist from localStorage", e);
-    } finally {
-      setIsLoaded(true);
+      console.error("Failed to save wishlist to localStorage", e);
     }
-  }, []);
-
-  useEffect(() => {
-    if (isLoaded) {
-      try {
-        localStorage.setItem("an_trendy_wishlist", JSON.stringify(wishlist));
-      } catch (e) {
-        console.error("Failed to save wishlist to localStorage", e);
-      }
-    }
-  }, [wishlist, isLoaded]);
+  }, [wishlist]);
 
   const isInWishlist = (productId: string) => {
     return wishlist.some((p) => p.id === productId);

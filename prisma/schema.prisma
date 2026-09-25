@@ -1,0 +1,203 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  phone        String?
+  name         String
+  passwordHash String
+  role         String   @default("customer") // "super_admin" | "admin" | "order_manager" | "product_manager" | "support_agent" | "supplier" | "customer"
+  avatarUrl    String?
+  isVerified   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  addresses    Address[]
+  orders       Order[]
+}
+
+model Address {
+  id             String  @id @default(cuid())
+  userId         String
+  label          String
+  recipientName  String
+  phone          String
+  division       String
+  district       String
+  upazila        String
+  addressDetails String
+  isDefault      Boolean @default(false)
+  
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Product {
+  id                String   @id @default(cuid())
+  sku               String   @unique
+  name              String
+  slug              String   @unique
+  description       String
+  shortDescription  String
+  price             Float
+  originalPrice     Float
+  discount          Float
+  currency          String   @default("BDT")
+  images            String // Stored as JSON string
+  categorySlug      String
+  categoryName      String
+  brand             String
+  rating            Float    @default(0)
+  reviewCount       Int      @default(0)
+  inStock           Boolean  @default(true)
+  stockCount        Int      @default(0)
+  lowStockThreshold Int      @default(5)
+  status            String   @default("active") // "draft" | "active" | "scheduled" | "archived"
+  isFeatured        Boolean  @default(false)
+  isNewArrival      Boolean  @default(false)
+  isBestSeller      Boolean  @default(false)
+  isFlashSale       Boolean  @default(false)
+  flashSaleEnds     DateTime?
+  specifications    String // Stored as JSON string
+  supplierId        String?
+  supplierName      String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  orderItems        OrderItem[]
+  reviews           Review[]
+}
+
+model Category {
+  id            String @id @default(cuid())
+  name          String
+  slug          String @unique
+  description   String
+  image         String
+  icon          String
+  subcategories String // Stored as JSON string
+  productCount  Int    @default(0)
+}
+
+model Supplier {
+  id                  String  @id @default(cuid())
+  name                String
+  contactPerson       String
+  phone               String
+  email               String
+  address             String
+  rating              Float   @default(0)
+  commissionRate      Float   @default(0)
+  isVerified          Boolean @default(false)
+  status              String  @default("Pending") // "Active" | "Pending" | "Inactive"
+  activeProductsCount Int     @default(0)
+}
+
+model Order {
+  id               String   @id @default(cuid())
+  orderNumber      String   @unique
+  userId           String?
+  customerName     String
+  customerEmail    String
+  customerPhone    String
+  deliveryDivision String
+  deliveryDistrict String
+  deliveryAddress  String
+  subtotal         Float
+  shippingFee      Float
+  discountAmount   Float
+  couponCode       String?
+  total            Float
+  paymentMethod    String // "cod" | "bkash" | "nagad" | "sslcommerz"
+  paymentStatus    String   @default("Pending") // "Pending" | "Paid" | "Failed" | "Refunded"
+  transactionId    String?
+  orderStatus      String   @default("Pending") // "Pending" | "Confirmed" | "Processing" | "Packed" | "Shipped" | "Out for Delivery" | "Delivered" | "Cancelled" | "Returned" | "Refunded"
+  courierName      String?
+  trackingNumber   String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user             User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  items            OrderItem[]
+}
+
+model OrderItem {
+  id            String  @id @default(cuid())
+  orderId       String
+  productId     String
+  productName   String
+  productImage  String
+  price         Float
+  quantity      Int
+  selectedColor String?
+  selectedSize  String?
+
+  order         Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product       Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+}
+
+model Coupon {
+  id            String   @id @default(cuid())
+  code          String   @unique
+  discountType  String // "percentage" | "fixed"
+  discountValue Float
+  minOrderValue Float
+  maxUsageLimit Int
+  usedCount     Int      @default(0)
+  expiryDate    DateTime
+  isActive      Boolean  @default(true)
+}
+
+model Review {
+  id               String   @id @default(cuid())
+  productId        String
+  productName      String
+  customerName     String
+  rating           Float
+  comment          String
+  verifiedPurchase Boolean  @default(false)
+  status           String   @default("pending") // "approved" | "pending" | "rejected"
+  createdAt        DateTime @default(now())
+
+  product          Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model SupportTicket {
+  id            String   @id @default(cuid())
+  ticketNumber  String   @unique
+  userId        String?
+  customerName  String
+  customerPhone String
+  subject       String
+  category      String // "order" | "shipping" | "payment" | "product" | "general"
+  priority      String   @default("medium") // "low" | "medium" | "high" | "urgent"
+  status        String   @default("Open") // "Open" | "In Progress" | "Resolved" | "Closed"
+  messages      String // Stored as JSON string
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model AiKnowledgeDoc {
+  id        String   @id @default(cuid())
+  title     String
+  category  String
+  content   String
+  keywords  String // Stored as JSON string
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  userName  String
+  action    String
+  resource  String
+  details   String
+  timestamp DateTime @default(now())
+}

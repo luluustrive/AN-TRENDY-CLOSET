@@ -19,7 +19,7 @@ function ProductsContent() {
   const [selectedCategory, setSelectedCategory] = useState(initialCategory);
   const [selectedFilter, setSelectedFilter] = useState(initialFilter);
   const [sortBy, setSortBy] = useState("featured");
-  const [priceLimit, setPriceLimit] = useState(10000);
+  const [priceLimit, setPriceLimit] = useState(100000);
   const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [quickViewProduct, setQuickViewProduct] = useState<Product | null>(null);
 
@@ -64,7 +64,7 @@ function ProductsContent() {
     setSelectedCategory("all");
     setSelectedFilter("all");
     setSortBy("featured");
-    setPriceLimit(10000);
+    setPriceLimit(100000);
     setSearchQuery("");
   };
 
@@ -195,8 +195,8 @@ function ProductsContent() {
                 <input
                   type="range"
                   min="1000"
-                  max="10000"
-                  step="500"
+                  max="100000"
+                  step="1000"
                   value={priceLimit}
                   onChange={(e) => setPriceLimit(Number(e.target.value))}
                   className="w-full accent-[#C89C7A] cursor-pointer"

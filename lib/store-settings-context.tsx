@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 export interface StoreSettings {
   shopName: string;
@@ -29,18 +29,16 @@ interface StoreSettingsContextType {
 const StoreSettingsContext = createContext<StoreSettingsContextType | undefined>(undefined);
 
 export function StoreSettingsProvider({ children }: { children: React.ReactNode }) {
-  const [settings, setSettings] = useState<StoreSettings>(defaultSettings);
-
-  useEffect(() => {
+  const [settings, setSettings] = useState<StoreSettings>(() => {
+    if (typeof window === "undefined") return defaultSettings;
     try {
       const saved = localStorage.getItem("an_store_settings");
-      if (saved) {
-        setSettings((prev) => ({ ...prev, ...JSON.parse(saved) }));
-      }
+      return saved ? { ...defaultSettings, ...JSON.parse(saved) } : defaultSettings;
     } catch (e) {
       console.error("Failed to load store settings from localStorage", e);
+      return defaultSettings;
     }
-  }, []);
+  });
 
   const updateSettings = (newSettings: Partial<StoreSettings>) => {
     setSettings((prev) => {

@@ -46,6 +46,11 @@ export default function Header() {
   const [searchFocused, setSearchFocused] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [themePanelOpen, setThemePanelOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -245,12 +250,12 @@ export default function Header() {
 
             {/* Wishlist Link */}
             <Link
-              href="/products?filter=bestseller"
+              href="/wishlist"
               className="text-stone-700 hover:text-amber-600 p-2 transition-colors relative"
               title="Wishlist"
             >
               <Heart className="w-5 h-5" />
-              {wishlistCount > 0 && (
+              {mounted && wishlistCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-rose-500 text-white font-bold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">
                   {wishlistCount}
                 </span>
@@ -265,7 +270,7 @@ export default function Header() {
             >
               <div className="relative">
                 <ShoppingBag className="w-5 h-5 text-amber-700" />
-                {totalItems > 0 && (
+                {mounted && totalItems > 0 && (
                   <span className="absolute -top-2 -right-2 bg-red-600 text-white font-extrabold text-[10px] w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
                     {totalItems}
                   </span>
@@ -273,7 +278,7 @@ export default function Header() {
               </div>
               <div className="hidden sm:flex flex-col text-left leading-tight">
                 <span className="text-[10px] text-stone-500 font-semibold uppercase">Cart</span>
-                <span className="text-xs font-extrabold text-stone-900">৳{totalPrice}</span>
+                <span className="text-xs font-extrabold text-stone-900">৳{mounted ? totalPrice : 0}</span>
               </div>
             </Link>
 
@@ -339,7 +344,7 @@ export default function Header() {
             {/* Quick Links */}
             <Link href="/products?filter=flash-sale" className="hover:text-amber-400 px-3 py-1 flex items-center space-x-1 text-amber-300">
               <Zap className="w-3.5 h-3.5 fill-amber-400" />
-              <span>Today's Deals</span>
+              <span>Today&apos;s Deals</span>
             </Link>
             <Link href="/products?filter=bestseller" className="hover:text-amber-400 px-3 py-1 flex items-center space-x-1">
               <Award className="w-3.5 h-3.5 text-amber-400" />
@@ -564,7 +569,7 @@ export default function Header() {
                   className="flex items-center space-x-3 px-3 py-2.5 rounded-xl hover:bg-stone-100 text-amber-700"
                 >
                   <Zap className="w-4 h-4 text-amber-500 fill-amber-500" />
-                  <span>Today's Deals</span>
+                  <span>Today&apos;s Deals</span>
                 </Link>
                 <Link
                   href="/products?filter=bestseller"

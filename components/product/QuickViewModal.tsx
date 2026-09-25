@@ -45,12 +45,24 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
         </button>
 
         {/* Product Visual Area */}
-        <div className="bg-[#FAF7F2] p-8 flex flex-col items-center justify-center relative min-h-[300px]">
-          <div className="w-40 h-40 rounded-full bg-white shadow-lg flex items-center justify-center text-6xl">
-            {product.categorySlug === "watches" ? "⌚" : 
-             product.categorySlug === "bags" ? "👜" : 
-             product.categorySlug === "cosmetics" ? "💄" : 
-             product.categorySlug === "jewelry" ? "💎" : "✨"}
+        <div className="bg-[#FAF7F2] p-6 flex flex-col items-center justify-center relative min-h-[300px]">
+          <div className="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden shadow-md bg-white border border-[#E9DED4]">
+            {product.images && product.images.length > 0 ? (
+              <img
+                src={product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-4xl">
+                ✨
+              </div>
+            )}
+            {product.discount > 0 && (
+              <span className="absolute top-3 left-3 bg-[#D4AF37] text-white font-bold text-xs px-2.5 py-1 rounded-full shadow-md">
+                -{product.discount}%
+              </span>
+            )}
           </div>
           <span className="mt-4 text-xs font-serif uppercase tracking-widest text-[#C89C7A] font-bold">
             {product.brand}

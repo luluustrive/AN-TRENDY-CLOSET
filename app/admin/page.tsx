@@ -28,6 +28,7 @@ import {
   Filter,
   Sparkles,
   Lock,
+  Bot,
   Image as ImageIcon
 } from "lucide-react";
 import productsDataRaw from "@/data/products.json";
@@ -91,32 +92,28 @@ const initialOrders: Order[] = [
 export default function AdminDashboard() {
   const { settings, updateSettings } = useStoreSettings();
   const { categories: categoriesList, addCategory, deleteCategory } = useCategories();
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    return sessionStorage.getItem("an_admin_authenticated") === "true";
+  });
   const [passwordInput, setPasswordInput] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const [activeTab, setActiveTab] = useState<"dashboard" | "products" | "orders" | "categories" | "suppliers" | "settings">("dashboard");
+  const [activeTab, setActiveTab] = useState<"dashboard" | "products" | "orders" | "categories" | "suppliers" | "ai" | "settings">("dashboard");
   const [productsList, setProductsList] = useState<Product[]>(productsDataRaw as unknown as Product[]);
-  const [suppliersList, setSuppliersList] = useState<Supplier[]>(suppliersDataRaw as unknown as Supplier[]);
+  const [suppliersList, setSuppliersList] = useState<Supplier[]>(() => {
+    if (typeof window === "undefined") return suppliersDataRaw as unknown as Supplier[];
+    try {
+      const savedSuppliers = localStorage.getItem("an_suppliers_data");
+      return savedSuppliers ? JSON.parse(savedSuppliers) : (suppliersDataRaw as unknown as Supplier[]);
+    } catch (e) {
+      return suppliersDataRaw as unknown as Supplier[];
+    }
+  });
   const [ordersList, setOrdersList] = useState<Order[]>(initialOrders);
   const [searchQuery, setSearchQuery] = useState("");
   const [notificationMessage, setNotificationMessage] = useState<string | null>(null);
-
-  useEffect(() => {
-    try {
-      const auth = sessionStorage.getItem("an_admin_authenticated");
-      if (auth === "true") {
-        setIsAuthenticated(true);
-      }
-      const savedSuppliers = localStorage.getItem("an_suppliers_data");
-      if (savedSuppliers) {
-        setSuppliersList(JSON.parse(savedSuppliers));
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  }, []);
 
   const saveSuppliersToStorage = (newList: Supplier[]) => {
     setSuppliersList(newList);
@@ -158,16 +155,6 @@ export default function AdminDashboard() {
   const [announcementInput, setAnnouncementInput] = useState(settings.announcement);
   const [supportEmailInput, setSupportEmailInput] = useState(settings.supportEmail);
   const [currencySymbolInput, setCurrencySymbolInput] = useState(settings.currencySymbol);
-
-  // Sync inputs when settings change
-  React.useEffect(() => {
-    setShopNameInput(settings.shopName);
-    setShopTaglineInput(settings.shopTagline);
-    setHotlineInput(settings.hotline);
-    setAnnouncementInput(settings.announcement);
-    setSupportEmailInput(settings.supportEmail);
-    setCurrencySymbolInput(settings.currencySymbol);
-  }, [settings]);
 
   // Modals state
   const [showAddProductModal, setShowAddProductModal] = useState(false);
@@ -246,9 +233,11 @@ export default function AdminDashboard() {
     }
 
     const selectedSup = suppliersList.find((s) => s.id === newProduct.supplierId);
+    const prodId = `prod-${Date.now()}`;
+    const generatedSku = newProduct.sku || `ANC-NEW-${Math.floor(Math.random() * 1000)}`;
 
     const created: Product = {
-      id: `prod-${Date.now()}`,
+      id: prodId,
       name: newProduct.name,
       slug: newProduct.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
       description: newProduct.shortDescription || "Premium quality product.",
@@ -272,7 +261,7 @@ export default function AdminDashboard() {
       isNewArrival: true,
       isBestSeller: false,
       isFlashSale: false,
-      sku: newProduct.sku || `ANC-NEW-${Math.floor(Math.random() * 1000)}`,
+      sku: generatedSku,
       specifications: { Quality: "Verified Authentic" },
       supplierId: selectedSup?.id,
       supplierName: selectedSup?.name,
@@ -298,8 +287,9 @@ export default function AdminDashboard() {
       alert("Please enter supplier business name and phone number.");
       return;
     }
+    const supId = `sup-${Date.now()}`;
     const createdSup: Supplier = {
-      id: `sup-${Date.now()}`,
+      id: supId,
       name: newSupplier.name,
       contactPerson: newSupplier.contactPerson || "Merchant Manager",
       phone: newSupplier.phone,
@@ -495,6 +485,15 @@ export default function AdminDashboard() {
             >
               <Truck className="w-4 h-4" />
               <span>Suppliers & Merchants</span>
+            </button>
+            <button
+              onClick={() => setActiveTab("ai")}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl transition-colors ${
+                activeTab === "ai" ? "bg-amber-500 text-stone-950" : "hover:bg-stone-900 text-stone-400"
+              }`}
+            >
+              <Bot className="w-4 h-4" />
+              <span>AI Assistant Control</span>
             </button>
             <button
               onClick={() => setActiveTab("settings")}
@@ -884,6 +883,80 @@ export default function AdminDashboard() {
               <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
                 <div className="text-xs text-stone-500 font-bold uppercase">Orders Pending</div>
                 <div className="text-3xl font-extrabold text-emerald-600 mt-2">{ordersList.length}</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* AI Assistant Control Tab */}
+        {activeTab === "ai" && (
+          <div className="space-y-6">
+            <div className="flex items-center justify-between border-b border-stone-200 pb-4">
+              <div>
+                <h2 className="text-2xl font-serif font-extrabold text-stone-900 flex items-center space-x-2">
+                  <Bot className="w-7 h-7 text-amber-600" />
+                  <span>24/7 AI Shopping Assistant Administration</span>
+                </h2>
+                <p className="text-xs text-stone-500 mt-1">
+                  Manage grounding, store knowledge, AI model selection, safety allowlists, and usage analytics.
+                </p>
+              </div>
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-800 border border-emerald-300 rounded-full text-xs font-bold flex items-center space-x-1">
+                <CheckCircle className="w-3.5 h-3.5" />
+                <span>AI Status: Active & Grounded</span>
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm space-y-4">
+                <h3 className="font-bold text-sm text-stone-900 border-b border-stone-100 pb-2">Model & Provider Settings</h3>
+                <div>
+                  <label className="block text-xs font-bold text-stone-600 mb-1">Active AI Provider</label>
+                  <select className="w-full bg-stone-50 border border-stone-300 rounded-xl p-2.5 text-xs font-bold text-stone-800">
+                    <option value="gemini">Google Gemini (Recommended)</option>
+                    <option value="openai">OpenAI GPT-4o-mini</option>
+                    <option value="anthropic">Anthropic Claude 3 Haiku</option>
+                    <option value="rule_engine">Factual Rule Engine (Offline Fallback)</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-stone-600 mb-1">Max Daily Budget Cap (USD)</label>
+                  <input type="number" defaultValue={10} className="w-full bg-stone-50 border border-stone-300 rounded-xl p-2.5 text-xs font-bold" />
+                </div>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm space-y-4">
+                <h3 className="font-bold text-sm text-stone-900 border-b border-stone-100 pb-2">Grounding & Tools Allowlist</h3>
+                <ul className="space-y-2 text-xs text-stone-700">
+                  <li className="flex items-center justify-between">
+                    <span>searchProducts</span>
+                    <span className="text-xs font-bold text-emerald-600">Enabled</span>
+                  </li>
+                  <li className="flex items-center justify-between">
+                    <span>getShippingEstimate</span>
+                    <span className="text-xs font-bold text-emerald-600">Enabled</span>
+                  </li>
+                  <li className="flex items-center justify-between">
+                    <span>getStorePolicy</span>
+                    <span className="text-xs font-bold text-emerald-600">Enabled</span>
+                  </li>
+                  <li className="flex items-center justify-between">
+                    <span>getOrderStatus (Authenticated)</span>
+                    <span className="text-xs font-bold text-emerald-600">Enabled</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm space-y-4">
+                <h3 className="font-bold text-sm text-stone-900 border-b border-stone-100 pb-2">AI Usage Analytics</h3>
+                <div>
+                  <div className="text-xs text-stone-500 font-semibold">Total Conversations</div>
+                  <div className="text-2xl font-extrabold text-stone-900">142</div>
+                </div>
+                <div>
+                  <div className="text-xs text-stone-500 font-semibold">Product Recommendations Clicked</div>
+                  <div className="text-2xl font-extrabold text-amber-600">89%</div>
+                </div>
               </div>
             </div>
           </div>

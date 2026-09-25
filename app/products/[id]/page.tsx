@@ -2,7 +2,7 @@
 
 import React, { useState, use } from "react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { 
   Star, 
   ShoppingBag, 
@@ -38,6 +38,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  const router = useRouter();
   const { addItem } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
 
@@ -62,7 +63,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
   const handleBuyNow = () => {
     addItem(product, quantity, selectedColor, selectedSize);
-    window.location.href = "/cart";
+    router.push("/cart");
   };
 
   const images = product.images && product.images.length > 0
@@ -216,6 +217,28 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                     >
                       <span className="w-3 h-3 rounded-full border border-stone-300" style={{ backgroundColor: c.hex }} />
                       <span>{c.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Size Selector */}
+            {product.sizes && product.sizes.length > 0 && (
+              <div className="mb-4">
+                <label className="block text-xs font-bold text-stone-700 mb-2">
+                  Select Size: <span className="text-amber-600 font-semibold">{selectedSize}</span>
+                </label>
+                <div className="flex flex-wrap gap-2">
+                  {product.sizes.map((s) => (
+                    <button
+                      key={s}
+                      onClick={() => setSelectedSize(s)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold border transition-all ${
+                        selectedSize === s ? "border-amber-500 bg-amber-50 text-amber-900" : "border-stone-200 text-stone-700 hover:bg-stone-50"
+                      }`}
+                    >
+                      {s}
                     </button>
                   ))}
                 </div>

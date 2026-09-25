@@ -13,18 +13,24 @@ interface FlashSaleProps {
 }
 
 export default function FlashSale({ onQuickView }: FlashSaleProps) {
-  // Target date set 7 days from now
-  const targetDate = "2026-08-25T23:59:59";
-  const [mounted, setMounted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
+  const [targetDate] = useState(() => {
+    const future = new Date();
+    future.setDate(future.getDate() + 7);
+    return future.toISOString();
+  });
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
+  const [timeLeft, setTimeLeft] = useState(() => getTimeRemaining(targetDate));
 
   useEffect(() => {
-    setMounted(true);
     const timer = setInterval(() => {
       setTimeLeft(getTimeRemaining(targetDate));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   const flashSaleProducts = getFlashSaleProducts().slice(0, 4);
 

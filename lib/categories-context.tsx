@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import categoriesDataRaw from "@/data/categories.json";
 import { Category } from "@/lib/types";
 
@@ -13,18 +13,16 @@ interface CategoriesContextType {
 const CategoriesContext = createContext<CategoriesContextType | undefined>(undefined);
 
 export function CategoriesProvider({ children }: { children: React.ReactNode }) {
-  const [categories, setCategories] = useState<Category[]>(categoriesDataRaw as unknown as Category[]);
-
-  useEffect(() => {
+  const [categories, setCategories] = useState<Category[]>(() => {
+    if (typeof window === "undefined") return categoriesDataRaw as unknown as Category[];
     try {
       const saved = localStorage.getItem("an_custom_categories");
-      if (saved) {
-        setCategories(JSON.parse(saved));
-      }
+      return saved ? JSON.parse(saved) : (categoriesDataRaw as unknown as Category[]);
     } catch (e) {
       console.error("Failed to load custom categories from localStorage", e);
+      return categoriesDataRaw as unknown as Category[];
     }
-  }, []);
+  });
 
   const saveCategories = (newList: Category[]) => {
     setCategories(newList);

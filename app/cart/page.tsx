@@ -349,7 +349,7 @@ export default function CartPage() {
                           <button
                             key={m.id}
                             type="button"
-                            onClick={() => setPaymentMethod(m.id as any)}
+                            onClick={() => setPaymentMethod(m.id as "cod" | "bkash" | "nagad")}
                             className={`p-2.5 rounded-xl border text-xs font-semibold text-center transition-all ${
                               paymentMethod === m.id
                                 ? "bg-[#C89C7A] text-white border-[#C89C7A]"

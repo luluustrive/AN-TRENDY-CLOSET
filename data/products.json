@@ -13,7 +13,7 @@
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&auto=format&fit=crop&q=80"
     ],
-    "category": "Watches",
+    "category": "Watches & Luxury",
     "categorySlug": "watches",
     "brand": "AN Collection",
     "rating": 4.8,
@@ -129,7 +129,7 @@
     "isNewArrival": false,
     "isBestSeller": true,
     "isFlashSale": true,
-    "flashSaleEnds": "2026-09-30T23:59:59",
+    "flashSaleEnds": "2026-12-31T23:59:59",
     "sku": "ANC-C-001",
     "specifications": {
       "Type": "Matte Lipstick",
@@ -223,7 +223,7 @@
     "isNewArrival": true,
     "isBestSeller": true,
     "isFlashSale": true,
-    "flashSaleEnds": "2026-09-30T23:59:59",
+    "flashSaleEnds": "2026-12-31T23:59:59",
     "sku": "ANC-E-001",
     "specifications": {
       "Bluetooth": "v5.3",
@@ -286,5 +286,286 @@
       "responseRate": "100%"
     },
     "soldCount": 540
+  },
+  {
+    "id": "prod-7",
+    "name": "Slim Metal Ultrabook M2 Pro 16GB",
+    "slug": "slim-metal-ultrabook-m2-pro",
+    "description": "Ultra-lightweight metallic laptop powered by M2 Pro 10-core CPU, 16GB unified memory, 512GB NVMe SSD, and 14-inch Liquid Retina Display with True Tone.",
+    "shortDescription": "14-inch Liquid Retina, M2 Pro 16GB/512GB Ultrabook",
+    "price": 145000,
+    "originalPrice": 160000,
+    "discount": 9,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Computers & Laptops",
+    "categorySlug": "computers",
+    "brand": "TechPro",
+    "rating": 4.9,
+    "reviewCount": 92,
+    "inStock": true,
+    "stockCount": 6,
+    "colors": [
+      { "name": "Space Gray", "hex": "#4B4E53" },
+      { "name": "Silver", "hex": "#C0C0C0" }
+    ],
+    "sizes": ["16GB RAM / 512GB SSD"],
+    "tags": ["laptop", "ultrabook", "macbook", "computer"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "sku": "ANC-COMP-001",
+    "specifications": {
+      "Processor": "M2 Pro 10-Core",
+      "RAM": "16GB Unified",
+      "Storage": "512GB PCIe SSD",
+      "Display": "14.2-inch Retina 120Hz"
+    },
+    "seller": {
+      "name": "TechPro Official BD",
+      "rating": 4.9,
+      "productsCount": 145,
+      "verified": true,
+      "responseRate": "98%"
+    },
+    "soldCount": 210
+  },
+  {
+    "id": "prod-8",
+    "name": "Designer Embroidered Anarkali Gown",
+    "slug": "designer-embroidered-anarkali-gown",
+    "description": "Exquisite silk blend Anarkali gown adorned with intricate zari work, hand-crafted embroidery, matching dupatta, and net inner lining. Perfect for weddings, festivals, and grand occasions.",
+    "shortDescription": "Silk blend embroidered Anarkali gown with dupatta",
+    "price": 8500,
+    "originalPrice": 12000,
+    "discount": 29,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Women's Fashion",
+    "categorySlug": "women-fashion",
+    "brand": "AN Couture",
+    "rating": 4.9,
+    "reviewCount": 142,
+    "inStock": true,
+    "stockCount": 18,
+    "colors": [
+      { "name": "Emerald Green", "hex": "#004953" },
+      { "name": "Royal Maroon", "hex": "#800020" }
+    ],
+    "sizes": ["M", "L", "XL", "XXL"],
+    "tags": ["ethnic", "anarkali", "wedding", "gown"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "sku": "ANC-WF-001",
+    "specifications": {
+      "Fabric": "Silk Blend & Net",
+      "Work": "Zari & Sequence Hand Embroidery",
+      "Dupatta": "Chiffon with lace border",
+      "Stitch Type": "Semi-Stitched"
+    },
+    "seller": {
+      "name": "AN Couture Atelier",
+      "rating": 4.9,
+      "productsCount": 310,
+      "verified": true,
+      "responseRate": "100%"
+    },
+    "soldCount": 450
+  },
+  {
+    "id": "prod-9",
+    "name": "Classic Fit Italian Wool Suit Set",
+    "slug": "classic-fit-italian-wool-suit",
+    "description": "Tailored 2-piece men's blazer suit woven from fine Italian wool. Features notch lapels, dual side vents, fully lined interior, and matching flat-front trousers.",
+    "shortDescription": "Premium 2-piece Italian wool formal suit",
+    "price": 12500,
+    "originalPrice": 16500,
+    "discount": 24,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Men's Fashion",
+    "categorySlug": "men-fashion",
+    "brand": "Gentleman AN",
+    "rating": 4.8,
+    "reviewCount": 78,
+    "inStock": true,
+    "stockCount": 10,
+    "colors": [
+      { "name": "Charcoal Black", "hex": "#2F2F2F" },
+      { "name": "Navy Blue", "hex": "#000080" }
+    ],
+    "sizes": ["38R", "40R", "42R", "44R"],
+    "tags": ["suit", "formal", "men fashion", "blazer"],
+    "isFeatured": true,
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "sku": "ANC-MF-001",
+    "specifications": {
+      "Material": "80% Italian Wool, 20% Silk",
+      "Cut": "Tailored Classic Fit",
+      "Includes": "Jacket & Trousers"
+    },
+    "seller": {
+      "name": "Royal Bespoke Menswear",
+      "rating": 4.8,
+      "productsCount": 180,
+      "verified": true,
+      "responseRate": "96%"
+    },
+    "soldCount": 190
+  },
+  {
+    "id": "prod-10",
+    "name": "Minimalist Nordic Ceramic Table Lamp",
+    "slug": "minimalist-nordic-ceramic-table-lamp",
+    "description": "Handcrafted matte ceramic bedside lamp with warm ambient LED bulb and natural linen shade. Adds calm Scandinavian elegance to any bedroom or living space.",
+    "shortDescription": "Matte ceramic lamp with linen shade & LED",
+    "price": 3400,
+    "originalPrice": 4800,
+    "discount": 29,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Home & Kitchen",
+    "categorySlug": "home-living",
+    "brand": "AN Living",
+    "rating": 4.7,
+    "reviewCount": 54,
+    "inStock": true,
+    "stockCount": 14,
+    "colors": [
+      { "name": "Off-White", "hex": "#FAF7F2" },
+      { "name": "Sand Beige", "hex": "#D2B48C" }
+    ],
+    "sizes": ["Medium (42cm height)"],
+    "tags": ["home decor", "lighting", "ceramic", "minimalist"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isFlashSale": false,
+    "sku": "ANC-H-001",
+    "specifications": {
+      "Base Material": "Ceramic",
+      "Shade Material": "Natural Linen",
+      "Bulb Type": "E27 Warm LED (Included)",
+      "Power": "220V Plug with In-line Switch"
+    },
+    "seller": {
+      "name": "Nordic Living BD",
+      "rating": 4.9,
+      "productsCount": 95,
+      "verified": true,
+      "responseRate": "99%"
+    },
+    "soldCount": 160
+  },
+  {
+    "id": "prod-11",
+    "name": "Pro Leather Air Runner Sneakers",
+    "slug": "pro-leather-air-runner-sneakers",
+    "description": "Ultra-lightweight mesh and genuine leather sneakers with air cushion midsole for high impact absorption. Breathable inner mesh lining with anti-slip rubber outsole.",
+    "shortDescription": "Air-cushioned genuine leather sports sneakers",
+    "price": 4200,
+    "originalPrice": 5600,
+    "discount": 25,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Shoes & Footwear",
+    "categorySlug": "shoes",
+    "brand": "AuraSport",
+    "rating": 4.8,
+    "reviewCount": 198,
+    "inStock": true,
+    "stockCount": 24,
+    "colors": [
+      { "name": "Crimson Red", "hex": "#DC2626" },
+      { "name": "Triple Black", "hex": "#18181B" }
+    ],
+    "sizes": ["EU 40", "EU 41", "EU 42", "EU 43", "EU 44"],
+    "tags": ["sneakers", "shoes", "running", "sports"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isFlashSale": false,
+    "sku": "ANC-SH-001",
+    "specifications": {
+      "Upper Material": "Microfiber Leather & Mesh",
+      "Sole Material": "Air Cushion Rubber",
+      "Closure": "Lace-Up"
+    },
+    "seller": {
+      "name": "Kicks & Co. BD",
+      "rating": 4.8,
+      "productsCount": 230,
+      "verified": true,
+      "responseRate": "97%"
+    },
+    "soldCount": 670
+  },
+  {
+    "id": "prod-12",
+    "name": "RGB Mechanical Gaming Keyboard Switch",
+    "slug": "rgb-mechanical-gaming-keyboard",
+    "description": "Tenkeyless (TKL) 87-key mechanical gaming keyboard with hot-swappable tactile switches, per-key RGB backlighting, braided Type-C cable, and sound-absorbing foam dampener.",
+    "shortDescription": "Hot-swappable RGB mechanical gaming keyboard",
+    "price": 4800,
+    "originalPrice": 6200,
+    "discount": 22,
+    "currency": "৳",
+    "images": [
+      "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&auto=format&fit=crop&q=80"
+    ],
+    "category": "Gaming & Tech",
+    "categorySlug": "gaming",
+    "brand": "ViperGaming",
+    "rating": 4.9,
+    "reviewCount": 115,
+    "inStock": true,
+    "stockCount": 16,
+    "colors": [
+      { "name": "Obsidian Black", "hex": "#121214" },
+      { "name": "Chalk White", "hex": "#FAFAFA" }
+    ],
+    "sizes": ["Brown Switch", "Red Switch"],
+    "tags": ["gaming", "keyboard", "rgb", "tech"],
+    "isFeatured": true,
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isFlashSale": true,
+    "flashSaleEnds": "2026-12-31T23:59:59",
+    "sku": "ANC-G-001",
+    "specifications": {
+      "Layout": "87 Keys TKL",
+      "Switch Type": "Hot-Swappable Tactile/Linear",
+      "Connectivity": "Detachable Type-C",
+      "Lighting": "16.8M RGB Chroma"
+    },
+    "seller": {
+      "name": "Viper Gaming Gear",
+      "rating": 4.9,
+      "productsCount": 175,
+      "verified": true,
+      "responseRate": "99%"
+    },
+    "soldCount": 410
   }
 ]

@@ -16,27 +16,19 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeMode>("light");
-  const [palette, setPaletteState] = useState<ColorPalette>("classic");
+  const [theme, setThemeState] = useState<ThemeMode>(() => {
+    if (typeof window === "undefined") return "light";
+    return (localStorage.getItem("theme-mode") as ThemeMode) || "light";
+  });
+  const [palette, setPaletteState] = useState<ColorPalette>(() => {
+    if (typeof window === "undefined") return "classic";
+    return (localStorage.getItem("theme-palette") as ColorPalette) || "classic";
+  });
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme-mode") as ThemeMode;
-    const savedPalette = localStorage.getItem("theme-palette") as ColorPalette;
-
-    if (savedTheme) {
-      setThemeState(savedTheme);
-      document.documentElement.setAttribute("data-theme", savedTheme);
-    } else {
-      document.documentElement.setAttribute("data-theme", "light");
-    }
-
-    if (savedPalette) {
-      setPaletteState(savedPalette);
-      document.documentElement.setAttribute("data-palette", savedPalette);
-    } else {
-      document.documentElement.setAttribute("data-palette", "classic");
-    }
-  }, []);
+    document.documentElement.setAttribute("data-theme", theme);
+    document.documentElement.setAttribute("data-palette", palette);
+  }, [theme, palette]);
 
   const setTheme = (newTheme: ThemeMode) => {
     setThemeState(newTheme);
