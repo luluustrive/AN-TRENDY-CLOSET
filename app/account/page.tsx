@@ -140,17 +140,19 @@ export default function AccountPage() {
 
         {/* Account Nav Tabs */}
         <div className="flex border-b border-[#E9DED4] mb-8 space-x-6 overflow-x-auto no-scrollbar">
-          {[
-            { id: "orders", label: "My Orders (2)", icon: Package },
-            { id: "addresses", label: "Saved Addresses", icon: MapPin },
-            { id: "wishlist", label: `Wishlist (${wishlist.length})`, icon: Heart },
-            { id: "profile", label: "Account Settings", icon: User },
-          ].map((tab) => {
+          {(
+            [
+              { id: "orders", label: "My Orders (2)", icon: Package },
+              { id: "addresses", label: "Saved Addresses", icon: MapPin },
+              { id: "wishlist", label: `Wishlist (${wishlist.length})`, icon: Heart },
+              { id: "profile", label: "Account Settings", icon: User },
+            ] as const
+          ).map((tab) => {
             const Icon = tab.icon;
             return (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id)}
                 className={`pb-4 text-xs font-bold transition-all flex items-center space-x-2 border-b-2 whitespace-nowrap ${
                   activeTab === tab.id
                     ? "border-[#C89C7A] text-[#C89C7A]"
